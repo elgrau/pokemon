@@ -1,0 +1,86 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-nav-tabs">
+                    <div class="card-header" data-background-color="red">
+                        <!--
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="nav-tabs-navigation navbar-collapse collapse">
+                                <ul class="nav navbar-nav navbar-left">
+                                    <li class="active">
+                                        <a href="#profile" data-toggle="tab">
+                                            <i class="material-icons">list</i>
+                                            Todos
+                                        <div class="ripple-container"></div></a>
+                                    </li>
+                                    <li class="">
+                                            <a href="#messages" data-toggle="tab">
+                                                <i class="material-icons">favorite_border</i>
+                                                Favoritos
+                                            <div class="ripple-container"></div></a>
+                                        </li>
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#about">Right</a></li>
+                                <li><a href="#contact">Right</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    -->
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper nav-tabs-navigation navbar-collapse collapse">
+                                <ul class="nav nav-tabs navbar-nav navbar-left" data-tabs="tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" (click)="loadPokemons(true)">
+                                            <i class="material-icons">list</i>Todos
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a data-toggle="tab" (click)="loadPokemons(false)">
+                                            <i class="material-icons">favorite_border</i>Favoritos
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>                                    
+                                </ul>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="buscar-pokemon">                                            
+                                        <div class="form-group form-white label-floating is-empty">
+                                            <label class="control-label">Buscar</label>
+                                            <input type="buscar" class="form-control" size="30">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content table-responsive">
+                        <cmp-pokemon-table [pokemons]="pokemons"></cmp-pokemon-table>                        
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="pull-left">
+                            <button routerLinkActive="active" routerLink="/pokemon-new" class="btn btn-primary">Nuevo Pokemon</button>
+                        </div>
+                        <ul class="pagination pull-right">
+                            <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

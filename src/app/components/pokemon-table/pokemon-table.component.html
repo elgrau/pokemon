@@ -1,0 +1,23 @@
+<table class="table">
+    <tbody>
+        <tr *ngFor="let pokemon of pokemons">
+            <td>
+                <cmp-pokemon-favorite [pokemon]="pokemon"></cmp-pokemon-favorite>
+                <cmp-pokemon-link [pokemon]="pokemon">{{ pokemon.name }}</cmp-pokemon-link>
+            </td>
+            <td class="pokemon-types">
+                <ng-container *ngFor="let pokemonType of pokemon.types">
+                    <cmp-pokemon-type [pokemonType]="pokemonType"></cmp-pokemon-type>
+                </ng-container>                                                
+            </td>
+            <td class="table-options text-right">
+                <button type="button" rel="tooltip" title="Editar Pokemon" class="btn btn-default btn-simple btn-xs">
+                    <i class="material-icons">edit</i>
+                </button>
+                <button type="button" rel="tooltip" title="Borrar Pokemon" class="btn btn-danger btn-simple btn-xs">
+                    <i class="material-icons">delete</i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

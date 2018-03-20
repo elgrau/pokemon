@@ -42,7 +42,7 @@ export interface PokemonDetailsModel {
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Editar</button>
+          <button type="button" class="btn btn-primary" routerLinkActive="active" routerLink="/pokemon-edit/{{ pokemon.id }}" (click)="close()">Editar</button>
           <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
         </div>
       </div>

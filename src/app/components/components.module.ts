@@ -8,6 +8,7 @@ import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
 import { PokemonLinkComponent } from './pokemon-link/pokemon-link.component';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component';
 import { PokemonTableComponent } from './pokemon-table/pokemon-table.component';
+import { PokemonEditButtonComponent } from './pokemon-edit-button/pokemon-edit-button.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { PokemonTableComponent } from './pokemon-table/pokemon-table.component';
     PokemonTypeComponent,
     PokemonLinkComponent,
     PokemonTableComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    PokemonEditButtonComponent
   ],
   exports: [
     SidebarComponent,
@@ -28,7 +30,8 @@ import { PokemonTableComponent } from './pokemon-table/pokemon-table.component';
     PokemonTypeComponent,
     PokemonLinkComponent,
     PokemonTableComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    PokemonEditButtonComponent
   ]
 })
 export class ComponentsModule { }

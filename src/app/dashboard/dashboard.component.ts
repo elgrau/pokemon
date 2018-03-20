@@ -38,7 +38,7 @@ export class DashboardComponent implements OnInit {
   }
 
   loadPokemonTypes(): void {
-    this.pokemonService.getAllPokemonType().subscribe(
+    this.pokemonService.getAllFrecuentTypes().subscribe(
       data => this.pokemonTypes = data,
       error => console.error('The following error has been raised', error)
     );

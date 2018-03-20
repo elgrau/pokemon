@@ -8,71 +8,57 @@
                         <p class="category">Complete your profile</p>
                     </div>
                     <div class="card-content">
-                        <form>
+                        <form (ngSubmit)="onSubmit()" #pokemonForm="ngForm">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group form-black label-floating is-empty">
+                                    <div class="form-group form-black label-floating" [ngClass]="{'is-empty': pokemon.name === ''}">
                                         <label class="control-label">Nombre</label>
-                                        <input type="text" class="form-control" required minlength="4" maxlength="24">
+                                        <input type="text" class="form-control" pattern="^[^\s]+$" required minlength="4" maxlength="24" trim
+                                        [(ngModel)]="pokemon.name" name="name" #nameField="ngModel">
+
+                                        <div *ngIf="nameField.invalid && (nameField.dirty || nameField.touched)">
+                                            <small *ngIf="nameField.errors.required" class="form-text text-muted">El nombre es obligatorio</small>
+                                            <small *ngIf="nameField.errors.minlength" class="form-text text-muted">El nombre debe tener una longitud mínima de 4</small>
+                                            <small *ngIf="nameField.errors.maxlength" class="form-text text-muted">El nombre debe tener una longitud máxima de 24</small>
+                                            <small *ngIf="nameField.errors.pattern" class="form-text text-muted">El nombre debe ser una única palabra</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
     
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="form-group form-black label-floating is-empty">
+                                    <div class="form-group form-black label-floating" [ngClass]="{'is-empty': pokemon.name === ''}">
                                         <label class="control-label">Descripción</label>
-                                        <textarea class="form-control" required ows="3" minlength="30"></textarea>
+                                        <textarea class="form-control" required ows="3" minlength="30" maxlength="1024" required [(ngModel)]="pokemon.description" name="description" #description="ngModel"></textarea>
+                                        <div *ngIf="description.invalid && (description.dirty || description.touched)">
+                                            <small *ngIf="description.errors.required" class="form-text text-muted">La descripción es obligatoria</small>
+                                            <small *ngIf="description.errors.minlength" class="form-text text-muted">La descripción debe tener una longitud mínima de 30</small>
+                                            <small *ngIf="description.errors.maxlength" class="form-text text-muted">La descripción debe tener una longitud máxima de 1024</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
     
                             <div class="row">
-                                <div class="col-md-4">
-                                        <div class="form-group form-black label-floating is-empty">
-                                        <label class="control-label">City</label>
+                                <div class="col-md-2">
+                                    <div class="form-group form-black label-floating">
+                                        <label class="control-label">Tipo de Pokemon</label>
                                         <ss-multiselect-dropdown required #types="ngModel" id="types" name="types" [options]="pokemonTypes"
-                                            [settings]="msTypesSettings" [texts]="myTexts" [(ngModel)]="pokemonSelectedTypes"></ss-multiselect-dropdown>
-                                        
-
+                                            [settings]="pokemonTypeSettings" [texts]="pokemonTypeTexts" [(ngModel)]="pokemonSelectedTypes"></ss-multiselect-dropdown>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                        <div class="col-md-3 dropdown">
-                                                <a href="#" class="btn btn-simple dropdown-toggle" data-toggle="dropdown">
-                                                    Regular
-                                                    <b class="caret"></b>
-                                                </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><div class="form-check">
-                                                            <label class="form-check-label">
-                                                                <input class="form-check-input" type="checkbox" value="">
-                                                                Option one is this and that&mdash;be sure to include why it's great
-                                                                <span class="form-check-sign">
-                                                                    <span class="check"></span>
-                                                                </span>
-                                                            </label>
-                                                        </div></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">Separated link</a></li>
-                                                    <li class="divider"></li>
-                                                    <li><a href="#">One more separated link</a></li>
-                                                </ul>
-                                            </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-black label-floating is-empty">
-                                        <label class="control-label">Postal Code</label>
-                                        <input type="text" class="form-control" >
+                                <div class="col-md-2">
+                                    <div class="col-md-3">
+                                        <div class="form-group form-black label-floating">
+                                            <label class="control-label">Evolución</label>
+                                            <ss-multiselect-dropdown required #types="ngModel" id="evolution" name="evolution" [options]="pokemonEvolutions"
+                                                [settings]="pokemonEvolutionSettings" [texts]="pokemonEvolutionTexts" [(ngModel)]="pokemonEvolutionSelected"></ss-multiselect-dropdown>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-    
-                            
-    
-                            <button type="submit" class="btn btn-danger pull-right">Update Profile</button>
+                            <button type="submit" class="btn btn-danger pull-right">Guardar</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>

@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'pokemon-list', component: PokemonListComponent },
   { path: 'pokemon-new', component: PokemonFormComponent },
+  { path: 'pokemon-edit/:id', component: PokemonFormComponent },
   { path: 'pokemon-details/:id', component: PokemonDetailsComponent }
 ];
 

@@ -153,38 +153,7 @@ a.dropdown-item {
     color: #333;
     white-space: nowrap;
 }
-/*
-a.dropdown-item input {
-    visibility: hidden;
-}
-*/
 
-
-
-.tim-row{
-    margin-bottom: 20px;
-}
-
-.tim-typo{
-    padding-left: 25%;
-    margin-bottom: 40px;
-    position: relative;
-}
-.tim-typo .tim-note{
-    bottom: 10px;
-    color: #c0c1c2;
-    display: block;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 13px;
-    left: 0;
-    margin-left: 20px;
-    position: absolute;
-    width: 260px;
-}
-.tim-row{
-    padding-top: 50px;
-}
-.tim-row h3{
-    margin-top: 0;
+.has-error small {
+    color: red;
 }

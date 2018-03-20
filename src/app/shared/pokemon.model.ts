@@ -4,6 +4,6 @@ export class Pokemon {
     description: string;
     types: any[];
     nextEvolution: Pokemon;
-    favorite: boolean;
+    favorite: boolean = false;
     imageUrl: string = 'assets/img/pokemons/unknown.jpg';
 }

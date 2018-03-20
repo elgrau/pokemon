@@ -11,9 +11,7 @@
                 </ng-container>                                                
             </td>
             <td class="table-options text-right">
-                <button type="button" rel="tooltip" title="Editar Pokemon" class="btn btn-default btn-simple btn-xs">
-                    <i class="material-icons">edit</i>
-                </button>
+                <cmp-pokemon-edit-button link="/pokemon-edit/{{ pokemon.id }}"></cmp-pokemon-edit-button>
                 <button type="button" rel="tooltip" title="Borrar Pokemon" class="btn btn-danger btn-simple btn-xs">
                     <i class="material-icons">delete</i>
                 </button>
